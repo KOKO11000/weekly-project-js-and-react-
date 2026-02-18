@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router";
 import AdminLoginPage from "./AdminLoginPage.jsx";
-export default function HomePage() {
+import Header from "../components/Header.jsx";
+import ComplaintsForm from "../components/ComplaintsForm.jsx";
+import Layout from "../components/Layout.jsx";
+export default function HomePage(props) {
   return (
     <div>
-      <Link to={"/submit"}>שליחת תלונה </Link>
-      <div>
-        <input type="password" placeholder="password..." name="" id="" />
-        <button onClick={<AdminLoginPage />}>כניסה לאדמין</button>
-      </div>
+      <Header title="Home Page" link="/" />
+      <Layout textH1="שירות תלונות לחיילים" link="/SubmitComplaints" />
+      <ComplaintsForm textH1="למפקדים בלבד" />
     </div>
   );
 }
